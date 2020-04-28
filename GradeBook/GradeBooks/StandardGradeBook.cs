@@ -11,7 +11,7 @@ namespace GradeBook.GradeBooks
         private readonly string _name;
         private readonly bool _isWeighted;
 
-        public StandardGradeBook(string name, bool isWeighted) : base(name)
+        public StandardGradeBook(string name, bool isWeighted) : base(name, isWeighted)
         {
             _name = name;
             _isWeighted = isWeighted;
