@@ -11,6 +11,8 @@ namespace GradeBook.GradeBooks
 {
     public abstract class BaseGradeBook
     {
+        private readonly bool _isWeigthed;
+
         public string Name { get; set; }
         public List<Student> Students { get; set; }
 
@@ -18,9 +20,10 @@ namespace GradeBook.GradeBooks
 
         public bool IsWeighted { get; set; }
 
-        public BaseGradeBook(string name)
+        public BaseGradeBook(string name, bool isWeigthed)
         {
             Name = name;
+            _isWeigthed = isWeigthed;
             Students = new List<Student>();
         }
 

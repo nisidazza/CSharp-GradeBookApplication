@@ -9,10 +9,12 @@ namespace GradeBook.GradeBooks
     public class StandardGradeBook : BaseGradeBook
     {
         private readonly string _name;
+        private readonly bool _isWeighted;
 
-        public StandardGradeBook(string name) : base(name)
+        public StandardGradeBook(string name, bool isWeighted) : base(name)
         {
             _name = name;
+            _isWeighted = isWeighted;
             Type = Enums.GradeBookType.Standard;
         }
 
