@@ -11,7 +11,6 @@ namespace GradeBook.GradeBooks
 {
     public abstract class BaseGradeBook
     {
-        private readonly bool _isWeigthed;
 
         public string Name { get; set; }
         public List<Student> Students { get; set; }
@@ -23,8 +22,8 @@ namespace GradeBook.GradeBooks
         public BaseGradeBook(string name, bool isWeigthed)
         {
             Name = name;
-            _isWeigthed = isWeigthed;
             Students = new List<Student>();
+            IsWeighted = isWeigthed;
         }
 
         public void AddStudent(Student student)
@@ -270,7 +269,7 @@ namespace GradeBook.GradeBooks
                              from type in assembly.GetTypes()
                              where type.FullName == "GradeBook.GradeBooks.StandardGradeBook"
                              select type).FirstOrDefault();
-            
+
             return JsonConvert.DeserializeObject(json, gradebook);
         }
     }
